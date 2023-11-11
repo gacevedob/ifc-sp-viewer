@@ -60,12 +60,12 @@ mainToolbar.addChild(
 )
 viewer.ui.addToolbar(mainToolbar)
 
-window.addEventListener("thatOpen", async (event:any) => {
-  const {name, payLoad} = event.detail;
-  if(name === "openModel"){
-    const{name,buffer}=payLoad;
-    const model = await ifcLoader.load(buffer,name);
+window.addEventListener("thatOpen", async (event: any) => {
+  const { name, payload } = event.detail;
+  if (name === "openModel") {
+    const { name, buffer } = payload;
+    const model = await ifcLoader.load(buffer, name);
     const scene = viewer.scene.get();
     scene.add(model);
   }
-} )
+});
